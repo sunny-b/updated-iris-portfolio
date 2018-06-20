@@ -20,6 +20,12 @@
 /app/assets/fonts
 /node_modules
 /yarn-error.log
+/tmp
+/vendor
+/log
+/lib
+/docker
+/db
 
 .byebug_history
 *.box
