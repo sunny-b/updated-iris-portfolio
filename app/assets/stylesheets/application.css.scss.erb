@@ -1,0 +1,272 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* Fonts */
+
+@font-face {
+  font-family: "Sectra";
+  src: url("<%= font_path('GT-Sectra-Book.eot') %>") format('embedded-opentype'),
+       url("<%= font_path('GT-Sectra-Book.ttf') %>") format('truetype'),
+       url("<%= font_path('GT-Sectra-Book.woff') %>") format('woff'),
+       url("<%= font_path('GT-Sectra-Book.woff2') %>") format('woff2');
+}
+
+@font-face {
+  font-family: "Sectra Display";
+  src: url("<%= font_path('GT-Sectra-Display-Regular.eot') %>") format('embedded-opentype'),
+       url("<%= font_path('GT-Sectra-Display-Regular.ttf') %>") format('truetype'),
+       url("<%= font_path('GT-Sectra-Display-Regular.woff') %>") format('woff'),
+       url("<%= font_path('GT-Sectra-Display-Regular.woff2') %>") format('woff2');
+}
+
+@font-face {
+  font-family: "Sectra Bold";
+  src: url("<%= font_path('GT-Sectra-Display-Bold-Italic.eot') %>") format('embedded-opentype'),
+       url("<%= font_path('GT-Sectra-Display-Bold-Italic.ttf') %>") format('truetype'),
+       url("<%= font_path('GT-Sectra-Display-Bold-Italic.woff') %>") format('woff'),
+       url("<%= font_path('GT-Sectra-Display-Bold-Italic.woff2') %>") format('woff2');
+}
+
+/* Animations */
+
+@keyframes rising-clap-small {
+  0% {
+    opacity: 0;
+    bottom: -100px;
+  }
+
+  50% {
+    opacity: 1;
+    bottom: 50px;
+  }
+
+  100% {
+    opacity: 0;
+    bottom: 200px;
+  }
+}
+
+@keyframes rising-clap-big {
+  0% {
+    opacity: 0;
+    bottom: -100px;
+  }
+
+  50% {
+    opacity: 1;
+    bottom: 15px;
+  }
+
+
+  100% {
+    opacity: 0;
+    bottom: 130px;
+  }
+}
+
+.small-clap {
+  animation: rising-clap-small 1.5s infinite;
+  animation-timing-function: linear;
+}
+.big-clap {
+  animation: rising-clap-big 1.5s infinite;
+  animation-delay: 0.75s;
+  animation-timing-function: linear;
+}
+
+
+ /* Flexbox */
+
+.flex { display: flex; }
+
+.row { flex-direction: row; }
+.row-r { flex-direction: row-reverse; }
+.col { flex-direction: column; }
+.col-r { flex-direction: column-reverse; }
+
+.j-start { justify-content: flex-start; }
+.j-end { justify-content: flex-end; }
+.j-center { justify-content: center; }
+.btw { justify-content: space-between; }
+.around { justify-content: space-around; }
+.even { justify-content: space-evenly; }
+
+.a-a { align-self: auto; }
+.a-start { align-self: flex-start; }
+.a-end { align-self: flex-end; }
+.a-center { align-self: center; }
+
+
+.center { align-items: center; }
+.base { align-items: baseline; }
+.stretch { align-items: stretch; }
+.zero {
+  padding: 0;
+  margin: 0;
+}
+.zero-children > * {
+  padding: 0;
+  margin: 0;
+}
+
+.half-w-space { width: 49%; }
+.third-w-space { width: 32%; }
+.half { width: 50%; }
+.third { width: 33%; }
+.two-thirds { width: 66%; }
+
+.line-space { line-height: 20px; }
+.line-48 { line-height: 48px; }
+
+.hundred {
+  width: 100%;
+  height: 100%;
+}
+
+.grow { flex-grow: 1 }
+.grow-2 { flex-grow: 2 }
+.gimme-height { line-height: 1.3em; }
+
+
+
+ /* Application */
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(#5241FF, #7B44FF) no-repeat;
+  padding: 30px 80px 8px;
+  margin: 0;
+  font-size: 16px;
+  color: #F0F0F0;
+  box-sizing: border-box;
+}
+
+.reading { font-family: "Sectra", "Poppins", Helvetica, sans-serif; }
+.display { font-family: "Sectra Display", "Poppins", Helvetica, sans-serif; }
+.bold { font-family: "Sectra Bold", "Poppins", Helvetica, sans-serif; }
+.poppins { font-family: "Poppins", Helvetica, sans-serif; }
+.small { font-size: 13px; }
+.big {
+  font-size: 38px;
+  letter-spacing: .03em;
+}
+.mid { font-size: 24px; }
+.upcase {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.underline { border-bottom: 1px white solid; }
+.gimme-less-space { margin-top: 16px; }
+.gimme-space { margin-top: 24px; }
+.gimme-more-space { margin-top: 40px; }
+.shift { transform: translateX(-10px); }
+.sixty { width: 60%; }
+.forty {
+  width: 40%;
+  margin-left: 40px;
+}
+.box-shadow { box-shadow: 0 11px 80px 0 rgba(42,0,108,0.53) }
+.space-bottom { padding-bottom: 120px; }
+.less-space-bottom { padding-bottom: 80px; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.right-hand { left: 205px; }
+.left-hand { left: -50px; }
+.fill {
+  height: 100%;
+  width: 100%;
+}
+.round-corners { border-radius: 8px; }
+
+
+p {
+  margin: 5px 0;
+}
+
+a {
+  cursor: pointer;
+  color: #F0F0F0;
+  text-decoration: none;
+}
+
+ul { list-style-type: none; }
+li { line-height: 1.4em; }
+nav { padding-bottom: 60px; }
+
+.hover-container {
+  padding: 5px 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.hover-container a {
+  width: 100%;
+  height: 100%;
+}
+
+.borders:before,
+.borders:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  transition: all 0.2s ease-in;
+  opacity: 0;
+  background-color: white;
+}
+
+.borders:after { right: 0; }
+.borders:before { left: 0; }
+
+.hover-container:hover .borders:before,
+.hover-container:hover .borders:after,
+.active .borders:before,
+.active .borders:after {
+  opacity: 1;
+  width: 50%;
+}
+
+.intro,
+.writing { max-width: 795px; }
+
+/* Hover Box */
+
+.hover-box {
+  z-index: 10;
+  background-color: #F2F2F2;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  opacity: 0;
+  position: absolute;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+.large-hover { padding: 88px; }
+.small-hover { padding: 45px; }
+.black-font { color: #4B4B4B; }
+.moving-text {
+  position: relative;
+  top: 180px;
+  transition: top 0.2s ease;
+}
+
+.grid-item { position: relative; }
+.grid-item:hover { cursor: url("<%= image_path('tilted-hand.svg') %>"), auto; }
+.grid-item:hover .hover-box { opacity: 0.93; }
+.grid-item:hover .moving-text { top: 0; }

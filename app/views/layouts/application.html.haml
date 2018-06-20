@@ -1,0 +1,14 @@
+!!!
+%html.zero
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title= "Iris Sprague | #{@page.capitalize}"
+
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link(href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet")
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body.flex.btw.col
+    = render 'layouts/nav', page: @page
+    = yield
+    = render 'layouts/footer'
