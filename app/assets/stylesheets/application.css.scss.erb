@@ -123,6 +123,7 @@
 }
 
 .half-w-space { width: 49%; }
+.half-w-more-space { width: 44%; }
 .third-w-space { width: 32%; }
 .half { width: 50%; }
 .third { width: 33%; }
@@ -130,11 +131,6 @@
 
 .line-space { line-height: 20px; }
 .line-48 { line-height: 48px; }
-
-.hundred {
-  width: 100%;
-  height: 100%;
-}
 
 .grow { flex-grow: 1 }
 .grow-2 { flex-grow: 2 }
@@ -179,7 +175,7 @@ body {
   width: 40%;
   margin-left: 40px;
 }
-.box-shadow { box-shadow: 0 11px 80px 0 rgba(42,0,108,0.53) }
+.box-shadow { box-shadow: 0 11px 80px 0 rgba(42,0,108,0.53); }
 .space-bottom { padding-bottom: 120px; }
 .less-space-bottom { padding-bottom: 72px; }
 .relative { position: relative; }
@@ -203,6 +199,12 @@ a {
 ul { list-style-type: none; }
 li { line-height: 1.4em; }
 nav { padding-bottom: 45px; }
+
+.box-shadow { box-shadow: 0 11px 80px 0 rgba(42,0,108,0.53); }
+.lite-shadow {
+  box-shadow: 0 8px 26px 0 rgba(23,43,255,0.17);
+  animation: all 2s ease;
+}
 
 .hover-container {
   padding: 5px 10px;
@@ -268,3 +270,80 @@ nav { padding-bottom: 45px; }
 .grid-item:hover { cursor: url("<%= image_path('tilted-hand.svg') %>"), auto; }
 .grid-item:hover .hover-box { opacity: 0.93; }
 .grid-item:hover .moving-text { top: 0; }
+
+/* Carousel */
+
+#carousel {
+  position: relative;
+  height: 550px;
+  box-shadow: 0 11px 80px 0 rgba(42,0,108,0.53);
+}
+.carousel-inner { position: relative; }
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+.carousel-item.active { opacity: 1; }
+
+.carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+}
+
+.carousel-control-next:hover {
+  cursor: url("<%= image_path('side-hand.svg') %>"), auto;
+}
+
+.carousel-control-prev:hover {
+  cursor: url("<%= image_path('hand-left.svg') %>"), auto;
+}
+
+.carousel-control-next { right: 0; }
+.carousel-control-prev { left: 0; }
+
+.carousel-nav {
+  position: absolute;
+  height: 77%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background: white;
+  box-sizing: border-box;
+  padding: 64px 120px 56px;
+}
+
+.carousel-nav-next a:hover,
+.carousel-nav-prev a:hover {
+  cursor: url("<%= image_path('tilted-hand.svg') %>"), auto;
+}
+
+.lite-shadow.hover::after,
+.lite-shadow.hover::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s cubic-bezier(.165, .84, .44, 1);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+  border-radius: 8px;
+  content: '';
+  opacity: 0;
+  z-index: 19;
+}
+
+a:hover .lite-shadow.hover::after,
+a:hover .lite-shadow.hover::after {
+  opacity: 1;
+}
+
+.lite-shadow.hover,
+.lite-shadow.hover {
+  height: 223px;
+  position: relative;
+}

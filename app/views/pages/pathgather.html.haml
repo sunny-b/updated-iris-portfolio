@@ -1,18 +1,8 @@
-.wrapper.flex.col.around
-  .section.less-space-bottom
-    %h3.small.poppins.upcase Pathgather
-    .gallery
-      %figure.zero
-        = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/pathgather-1.png', class: 'fill rounded-corners'
-  .section.less-space-bottom
-    %h3.small.poppins.upcase Overview
-    .copy.col-2
-      %p.reading.mid Pathgather is a learning platform for enterprise companies. I am leading the redesign of Pathgather’s entire platform, end-to-end, acting as a product manager, UX designer, UX researcher, UI designer, brand designer and design manager.
-      %p.reading.mid.gimme-less-space I was the first product person hired at Pathgather. I led an UX audit and conducted internal and external user interviews. I discovered high leverage usability issues. I suggested doing a redesign of the entire platform. The design method we employed was Dual Track Agile. After user interviews, I documented all the insights and then created user stories to support each feature. I led the complete redesign of the end-user app. We created an MVP for our end user experience then took the MVP to our customers.
-  .section.less-space-bottom
-    %figure.zero.less-space-bottom
-      = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/pathgather-illo.png', class: 'fill rounded-corners'
-    .copy.col-2
-      %p.reading.mid I led all the UX validation interviews for our MVP while building the Admin interface. Documented all the insights into Product Board, a product management tool. I used product board to quantify all the qualitative insights. Mapping individual insights to drivers such as usability and engagement, and features.
-      %p.readming.mid.gimme-less-space From this process I created 130 new features and had a data driven prioritized design backlog. Created an executive summary based off of the insights. I managed a design contractor who built the full fledged mobile experience. Worked cross functionally with the Marketing department to mange a marketing designer.
-      %p.reading.mid.gimme-less-space I also rebranded the company with a new logo and brand colors for the app.
+= render 'layouts/portfolio_page',
+    page: @page,
+    carousel_images: ['https://iris-site.nyc3.cdn.digitaloceanspaces.com/pathgather-1.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/pathgather-2.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/pathgather-3.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/pathgather-4.png'],
+    secondary_image: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/pathgather-illo.png',
+    top_paragraphs: ['Pathgather is a learning platform for enterprise companies. I am leading the redesign of Pathgather’s entire platform, end-to-end, acting as a product manager, UX designer, UX researcher, UI designer, brand designer and design manager.', 'I was the first product person hired at Pathgather. I led an UX audit and conducted internal and external user interviews. I discovered high leverage usability issues. I suggested doing a redesign of the entire platform. The design method we employed was Dual Track Agile. After user interviews, I documented all the insights and then created user stories to support each feature. I led the complete redesign of the end-user app. We created an MVP for our end user experience then took the MVP to our customers.'],
+    bottom_paragraphs: ['I led all the UX validation interviews for our MVP while building the Admin interface. Documented all the insights into Product Board, a product management tool. I used product board to quantify all the qualitative insights. Mapping individual insights to drivers such as usability and engagement, and features.', 'From this process I created 130 new features and had a data driven prioritized design backlog. Created an executive summary based off of the insights. I managed a design contractor who built the full fledged mobile experience. Worked cross functionally with the Marketing department to mange a marketing designer. I also rebranded the company with a new logo and brand colors for the app.'],
+    after: {name: 'Kustomer', link: kustomer_path, image: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/kustomer-iphone-1.gif'},
+    prev: {name: 'Illustrations', link: illustrations_path, image: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illo-1.png'}

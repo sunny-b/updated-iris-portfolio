@@ -1,0 +1,48 @@
+.wrapper.flex.col.around
+  .section.less-space-bottom
+    %h3.small.poppins.upcase= page.capitalize
+    #carousel.box-shadow.round-corners
+      .carousel-inner.fill
+        - carousel_images.each_with_index do |img, i|
+          - if i.zero?
+            .carousel-item.active.fill
+              %figure.zero.box-shadow.round-corners.fill
+                = image_tag img, class: 'fill round-corners'
+          - else
+            .carousel-item.fill
+              %figure.zero.box-shadow.round-corners.fill
+                = image_tag img, class: 'fill round-corners'
+      .carousel-control-prev.half
+      .carousel-control-next.half
+      .carousel-nav.flex.row.btw.box-shadow.round-corners
+        .carousel-nav-prev.half-w-more-space
+          %a.flex.col.j-center.btw.fill{href: prev[:link]}
+            .lite-shadow.hover.round-corners
+              = image_tag prev[:image], class: 'fill round-corners'
+            %span.small.poppins.upcase.black-font.gimme-less-space Previous
+            %h3.zero.mid.display.black-font= prev[:name]
+        .carousel-nav-next.half-w-more-space
+          %a.flex.col.j-center.btw.fill{href: after[:link]}
+            .lite-shadow.hover.round-corners
+              = image_tag after[:image], class: 'fill round-corners'
+            %span.small.poppins.upcase.black-font.gimme-less-space Next
+            %h3.zero.mid.display.black-font= after[:name]
+  .section.less-space-bottom
+    %h3.small.poppins.upcase Overview
+    .copy.col-2
+      - top_paragraphs.each_with_index do |p, i|
+        - if i.zero?
+          %p.reading.mid= p
+        - else
+          %p.reading.mid.gimme-less-space= p
+  .section.less-space-bottom
+    %figure.zero.less-space-bottom
+      = image_tag secondary_image, class: 'fill round-corners box-shadow'
+    .copy.col-2
+      - bottom_paragraphs.each_with_index do |p, i|
+        - if i.zero?
+          %p.reading.mid= p
+        - else
+          %p.reading.mid.gimme-less-space= p
+
+= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
