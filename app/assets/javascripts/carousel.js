@@ -4,8 +4,8 @@ class Carousel {
   }
 
   bindEvents() {
-    document.querySelector('.carousel-control-next').addEventListener('click', this.nextImg);
-    document.querySelector('.carousel-control-prev').addEventListener('click', this.prevImg);
+    document.querySelector('.carousel-control-next').addEventListener('click', this.nextImg.bind(this));
+    document.querySelector('.carousel-control-prev').addEventListener('click', this.prevImg.bind(this));
   }
 
   nextImg(e) {
@@ -14,18 +14,32 @@ class Carousel {
     if (currentImg.nextElementSibling) {
       currentImg.classList.remove('active');
       currentImg.nextElementSibling.classList.add('active');
-    } else {
-      // this.displayNav();
+    } else if (!this.isNavShowing()) {
+      this.displayNav();
     }
   }
 
   prevImg(e) {
     const currentImg = document.querySelector('.carousel-item.active');
-
-    if (currentImg.previousElementSibling) {
+    
+    if (this.isNavShowing()) {
+      this.hideNav();
+    } else if (currentImg.previousElementSibling) {
       currentImg.classList.remove('active');
       currentImg.previousElementSibling.classList.add('active');
     }
+  }
+
+  isNavShowing() {
+    return !!document.querySelector('.carousel-nav.show');
+  }
+
+  displayNav() {
+    document.querySelector('.carousel-nav').classList.add('show');
+  }
+
+  hideNav() {
+    document.querySelector('.carousel-nav.show').classList.remove('show');
   }
 }
 

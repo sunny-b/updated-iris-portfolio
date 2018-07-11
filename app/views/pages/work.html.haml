@@ -1,8 +1,8 @@
 .wrapper.flex.col.around
   .section.less-space-bottom
     %h3.small.poppins.upcase What I'm Doing
-    .flex.row.btw
-      .gimme-height.btw
+    .flex.col-row.btw.mobile-col-rev
+      .gimme-height.btw.mobile-gimme-less-space
         %p.display.big.line-48 Pathgather is a learning platform for enterprise companies. I am redesigning their entire platform, end-to-end.
         .zero-children.gimme-space
           %p.poppins.small.upcase Roles:
@@ -10,39 +10,12 @@
           %p.poppins.small.upcase UI Designer, and Brand Designer.
         %p.gimme-space
           = link_to 'See Pathgather Work', pathgather_path, class: 'bold underline'
-      %figure.zero.box-shadow
-        = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/newpgcover1.png', class: 'fill round-corners'
-  .section
+      = render 'layouts/grid_item', item: @current_item, size: nil
+  .section.less-space-bottom
     %h3.small.poppins.upcase What I've Done
-    .first-row.flex.row.btw.gimme-space
-      %a.grid-item.zero.half-w-space(href="<%= kustomer_path %>")
-        .hover-box.large-hover.j-center.center.col.black-font
-          .moving-text
-            %p.poppins.small.upcase.a-start Product Design
-            %p.mid.bold.a-start Kustomer is an innovative B2B, SaaS, CRM platform. While I was here I acted as a product manager, UX designer and UI designer.
-        = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/kustomer-iphone-1.gif', class: 'fill round-corners box-shadow'
-      %a.grid-item.zero.half-w-space(href="<%= rope_path %>")
-        .hover-box.large-hover.j-center.center.col.black-font
-          .moving-text
-            %p.poppins.small.upcase.a-start Rope
-            %p.mid.bold.a-start Lorem Ipsum
-        = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/rope-1.png', class: 'fill round-corners box-shadow'
-    .second-row.gimme-space.flex.row.btw
-      %a.grid-item.zero.third-w-space(href="<%= personal_path %>")
-        .hover-box.small-hover.j-center.center.col.black-font
-          .moving-text
-            %p.poppins.small.upcase.a-start Personal Work
-            %p.mid.bold.a-start Lorem Ipsum
-        = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/personal-1.png', class: 'fill round-corners box-shadow'
-      %a.grid-item.zero.third-w-space(href="<%= lettering_path %>")
-        .hover-box.small-hover.j-center.center.col.black-font
-          .moving-text
-            %p.poppins.small.upcase.a-start Lettering
-            %p.mid.bold.a-start Lorem Ipsum
-        = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering-1.png', class: 'fill round-corners box-shadow'
-      %a.grid-item.zero.third-w-space(href="<%= Illustrations_path %>")
-        .hover-box.small-hover.j-center.center.col.black-font
-          .moving-text
-            %p.poppins.small.upcase.a-start Illustrations
-            %p.mid.bold.a-start Lorem Ipsum
-        = image_tag 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illo-1.png', class: 'fill round-corners box-shadow'
+    .first-row.flex.col-row.btw.gimme-space
+      - @first_row_items.each do |item|
+        = render 'layouts/grid_item', item: item, size: 'half-w-space'
+    .second-row.desktop-gimme-space.flex.col-row.btw
+      - @second_row_items.each do |item|
+        = render 'layouts/grid_item', item: item, size: 'third-w-space'

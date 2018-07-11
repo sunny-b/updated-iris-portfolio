@@ -6,15 +6,15 @@
         - carousel_images.each_with_index do |img, i|
           - if i.zero?
             .carousel-item.active.fill
-              %figure.zero.box-shadow.round-corners.fill
+              %figure.zero.round-corners.fill
                 = image_tag img, class: 'fill round-corners'
           - else
             .carousel-item.fill
-              %figure.zero.box-shadow.round-corners.fill
+              %figure.zero.round-corners.fill
                 = image_tag img, class: 'fill round-corners'
       .carousel-control-prev.half
       .carousel-control-next.half
-      .carousel-nav.flex.row.btw.box-shadow.round-corners
+      .carousel-nav.flex.row.btw.box-shadow-top.round-corners
         .carousel-nav-prev.half-w-more-space
           %a.flex.col.j-center.btw.fill{href: prev[:link]}
             .lite-shadow.hover.round-corners

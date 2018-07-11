@@ -1,52 +1,27 @@
-FROM ubuntu:12.04
-MAINTAINER talkingquickly.co.uk <ben@talkingquickly.co.uk>
+FROM phusion/passenger-ruby23:0.9.33
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV HOME /root
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install yarn
 
-# REPOS
-RUN apt-get -y update
-RUN apt-get install -y -q python-software-properties
-RUN add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
-RUN add-apt-repository -y ppa:chris-lea/node.js
-RUN apt-get -y update
+CMD ["/sbin/my_init"]
 
-# INSTALL
-RUN apt-get install -y -q build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config libmysqlclient-dev libpq-dev make wget unzip git vim nano nodejs mysql-client mysql-server gawk libgdbm-dev libffi-dev
+RUN rm -f /etc/service/nginx/down
+RUN rm /etc/nginx/sites-enabled/default
 
-RUN git clone https://github.com/sstephenson/ruby-build.git /tmp/ruby-build && \
-    cd /tmp/ruby-build && \
-    ./install.sh && \
-    cd / && \
-    rm -rf /tmp/ruby-build
+ADD nginx/iris-site.conf /etc/nginx/sites-enabled/iris-site.conf
+ADD nginx/rails-env.conf /etc/nginx/main.d/rails-env.conf
+ADD nginx/app-env.conf /etc/nginx/conf.d/00_app_env.conf
 
-# Install ruby
-RUN ruby-build -v 2.3.3 /usr/local
+WORKDIR /home/app/iris-site
+COPY . .
+RUN chown -R app:app /home/app
+RUN bundle install --without development test
 
-# Install base gems
-RUN gem install bundler rubygems-bundler --no-rdoc --no-ri
+ENV RAILS_ENV production
+ENV RACK_ENV production
 
-# Regenerate binstubs
-RUN gem regenerate_binstubs
+RUN bundle exec rake assets:precompile
 
-# Rails app
-ADD docker/rails/start-server.sh /start-server.sh
-RUN chmod +x /start-server.sh
-# RUN mkdir /app
-
-# Preinstall majority of gems
-WORKDIR /tmp
-ADD ./Gemfile Gemfile
-ADD ./Gemfile.lock Gemfile.lock
-RUN bundle install
-
-RUN mkdir /app
-# ADD . /app
-
-ENV RAILS_ENV development
-
-# ADD ./docker/rails/setup_database.sh /setup_database.sh
-# RUN chmod +x /setup_database.sh
-
-EXPOSE 3000
-
-CMD ["/start-server.sh"]
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

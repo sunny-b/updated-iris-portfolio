@@ -31,3 +31,7 @@
 *.box
 .vagrant/
 /d
+/Vagrantfile
+/Dockerfile
+/docker-compose.yml
+/nginx

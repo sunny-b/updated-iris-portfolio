@@ -1,0 +1,7 @@
+%a{href: item[:path], class: "grid-item zero round-corners #{size}" }
+  .hover-box.small-hover.flex.j-center.center.col.black-font
+    .moving-text
+      - if item[:name]
+        %p.poppins.small.upcase.a-start= item[:name]
+      %p.mid.bold.a-start= item[:description]
+  = image_tag item[:img], class: 'fill round-corners box-shadow'

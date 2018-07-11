@@ -1,0 +1,10 @@
+/Vagrantfile
+/package.json
+/d
+/log
+/lib
+/db
+/.vagrant
+/.git
+/tmp
+/vendor
