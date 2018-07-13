@@ -1,8 +1,8 @@
 .wrapper.flex.col.around
-  .section.less-space-bottom
+  .section.less-space-bottom.current
     %h3.small.poppins.upcase What I'm Doing
     .flex.col-row.btw.mobile-col-rev
-      .gimme-height.btw.mobile-gimme-less-space
+      .gimme-height.btw.mobile-gimme-less-space.full-width
         %p.display.big.line-48 Pathgather is a learning platform for enterprise companies. I am redesigning their entire platform, end-to-end.
         .zero-children.gimme-space
           %p.poppins.small.upcase Roles:
@@ -10,12 +10,12 @@
           %p.poppins.small.upcase UI Designer, and Brand Designer.
         %p.gimme-space
           = link_to 'See Pathgather Work', pathgather_path, class: 'bold underline'
-      = render 'layouts/grid_item', item: @current_item, size: nil
+      = render 'layouts/grid_item', item: @current_item, size: nil, fill: false
   .section.less-space-bottom
     %h3.small.poppins.upcase What I've Done
     .first-row.flex.col-row.btw.gimme-space
       - @first_row_items.each do |item|
-        = render 'layouts/grid_item', item: item, size: 'half-w-space'
+        = render 'layouts/grid_item', item: item, size: 'half-w-space', fill: true
     .second-row.desktop-gimme-space.flex.col-row.btw
       - @second_row_items.each do |item|
-        = render 'layouts/grid_item', item: item, size: 'third-w-space'
+        = render 'layouts/grid_item', item: item, size: 'third-w-space', fill: true

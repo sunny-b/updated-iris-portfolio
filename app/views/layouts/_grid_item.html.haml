@@ -4,4 +4,4 @@
       - if item[:name]
         %p.poppins.small.upcase.a-start= item[:name]
       %p.mid.bold.a-start= item[:description]
-  = image_tag item[:img], class: 'fill round-corners box-shadow'
+  = image_tag item[:img], class: "#{fill ? 'fill' : 'full-width'} round-corners box-shadow"
