@@ -294,6 +294,7 @@ nav {
   box-shadow: 0 11px 80px 0 rgba(42,0,108,0.53);
   overflow: hidden;
 }
+
 .carousel-inner { position: relative; }
 .carousel-item {
   position: absolute;
@@ -325,12 +326,12 @@ nav {
   position: absolute;
   height: 77%;
   width: 100%;
-  bottom: -83%;
+  bottom: -100%;
   left: 0;
   z-index: 20;
   background: white;
   box-sizing: border-box;
-  padding: 64px 120px 56px;
+  padding: 4% 9% 5%;
   transition: all 0.5s ease;
 }
 .carousel-nav.show { bottom: 0; }
@@ -501,7 +502,6 @@ a:hover .lite-shadow.hover::after {
 
   .carousel-nav {
     padding: 16px 16px 32px;
-    bottom: -100%;
   }
 
   .full-size-mobile {
@@ -571,5 +571,26 @@ a:hover .lite-shadow.hover::after {
   .gimme-space-bottom,
   .gimme-space {
     margin-top: 16px;
+  }
+
+  #carousel {
+    width: 115%;
+    right: 7.5%;
+    height: 48.31975vw;
+  }
+
+  .carousel-nav {
+    padding: 5% 7% 7%;
+  }
+
+  .mid {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .full-size-mobile {
+    width: 115%;
+    right: 7.5%;
+    position: relative;
   }
 }
