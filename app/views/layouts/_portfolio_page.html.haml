@@ -27,9 +27,9 @@
               = image_tag after[:image], class: 'fill round-corners'
             %span.small.poppins.upcase.black-font.gimme-less-space Next
             %h3.zero.mid.display.black-font= after[:name]
-  .section.less-space-bottom
+  .section.less-space-bottom.text-column
     %h3.small.poppins.upcase Overview
-    .copy.col-2
+    .copy
       - top_paragraphs.each_with_index do |p, i|
         - if i.zero?
           %p.reading.mid= p
@@ -38,7 +38,7 @@
   .section.less-space-bottom
     %figure.zero.less-space-bottom.full-size-mobile
       = image_tag secondary_image, class: 'fill round-corners box-shadow'
-    .copy.col-2
+    .copy.text-column
       - bottom_paragraphs.each_with_index do |p, i|
         - if i.zero?
           %p.reading.mid= p
