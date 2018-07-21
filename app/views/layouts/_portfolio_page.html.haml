@@ -32,17 +32,17 @@
     .copy
       - top_paragraphs.each_with_index do |p, i|
         - if i.zero?
-          %p.reading.mid= p
+          %p.reading.mid= p.html_safe
         - else
-          %p.reading.mid.gimme-less-space= p
-  .section.less-space-bottom
+          %p.reading.mid.gimme-less-space= p.html_safe
+  .section{ class: ("less-space-bottom" unless bottom_paragraphs.empty?) }
     %figure.zero.less-space-bottom.full-size-mobile
       = image_tag secondary_image, class: 'fill round-corners box-shadow'
     .copy.text-column
       - bottom_paragraphs.each_with_index do |p, i|
         - if i.zero?
-          %p.reading.mid= p
+          %p.reading.mid= p.html_safe
         - else
-          %p.reading.mid.gimme-less-space= p
+          %p.reading.mid.gimme-less-space= p.html_safe
 
 = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
