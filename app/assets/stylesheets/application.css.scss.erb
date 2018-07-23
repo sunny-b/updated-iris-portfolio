@@ -89,6 +89,15 @@
   animation-timing-function: linear;
 }
 
+.link-hover {
+  transition: all 0.3s ease;
+}
+
+.link-hover:hover {
+  color: rgb(225, 231, 242);
+  border-color: rgb(225, 231, 242);
+}
+
 
  /* Flexbox */
 
@@ -147,7 +156,7 @@
 body {
   min-height: 100vh;
   background: linear-gradient(#5241FF, #7B44FF) no-repeat;
-  padding: 30px 80px 8px;
+  padding: 24px 80px 8px;
   margin: 0;
   font-size: 16px;
   color: #F0F0F0;
@@ -205,6 +214,8 @@ aside {
 .round-corners { border-radius: 8px; }
 .mobile { display: none; }
 .desktop { display: block; }
+.block { display: block; }
+.max-550 { max-width: 550px; }
 
 p {
   margin: 5px 0;
@@ -221,7 +232,7 @@ a {
 ul { list-style-type: none; }
 li { line-height: 1.4em; }
 nav {
-  padding-bottom: 45px;
+  padding-bottom: 24px;
   flex-direction: row;
 }
 
@@ -389,7 +400,7 @@ a:hover .lite-shadow.hover::after {
 
 @media(max-width: 1000px) {
   body {
-    padding: 30px 50px 8px;
+    padding: 24px 48px 8px;
   }
 
   .col-row {
@@ -468,6 +479,14 @@ a:hover .lite-shadow.hover::after {
 
   .line-48 {
     line-height: 32px;
+  }
+
+  .other-projects {
+    display: none;
+  }
+
+  .a-center-mobile {
+    align-self: center;
   }
 }
 

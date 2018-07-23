@@ -8,6 +8,7 @@
 
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link(href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet")
   %body.flex.col.btw
     = render 'layouts/nav', page: @page

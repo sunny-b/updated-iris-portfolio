@@ -1,2 +1,20 @@
-.flex.j-center
-  %h1.a-center.display Illustrations Page Coming Soon!
+= render 'layouts/portfolio_page',
+    page: 'illustrations',
+    carousel_images: ['https://iris-site.nyc3.cdn.digitaloceanspaces.com/illos/illo-1.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illos/illo%202.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illos/illo%203.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illos/illo%204.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illos/illo%205.png'],
+    secondary_image: '',
+    top_paragraphs: ['Various illustrations for webapps.'],
+    bottom_paragraphs: [],
+    after: {name: 'Pathgather', link: pathgather_path, image: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/macbook-discover-homepage.gif'},
+    prev: {name: 'Type & Lettering', link: lettering_path, image: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering-1.png'},
+    other_projects: [{ name: 'Kustomer',
+       description: 'Lorem Ipsum',
+       img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/kustomer-iphone-1.gif',
+       path: kustomer_path },
+     { name: 'Rope Type Foundry',
+        description: 'Lorem Ipsum',
+        img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/rope-1.png',
+        path: rope_path },
+      { name: 'Personal Work',
+         description: 'Lorem Ipsum',
+         img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/personal-1.png',
+         path: personal_path }]

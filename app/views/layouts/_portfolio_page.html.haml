@@ -35,14 +35,21 @@
           %p.reading.mid= p.html_safe
         - else
           %p.reading.mid.gimme-less-space= p.html_safe
-  .section{ class: ("less-space-bottom" unless bottom_paragraphs.empty?) }
-    %figure.zero.less-space-bottom.full-size-mobile
-      = image_tag secondary_image, class: 'fill round-corners box-shadow'
-    .copy.text-column
-      - bottom_paragraphs.each_with_index do |p, i|
-        - if i.zero?
-          %p.reading.mid= p.html_safe
+  - unless secondary_image.empty?
+    .section{ class: ("less-space-bottom" unless bottom_paragraphs.empty?) }
+      %figure.zero.less-space-bottom.full-size-mobile
+        - if /\.mp4/.match(secondary_image)
+          = video_tag secondary_image, controls: true, autoplay: false, muted: true, autobuffer: true, class: 'fill round-corners box-shadow'
         - else
-          %p.reading.mid.gimme-less-space= p.html_safe
+          = image_tag secondary_image, class: 'fill round-corners box-shadow'
+      .copy.text-column
+        - bottom_paragraphs.each_with_index do |p, i|
+          - if i.zero?
+            %p.reading.mid= p.html_safe
+          - else
+            %p.reading.mid.gimme-less-space= p.html_safe
 
-= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  = render 'layouts/other_projects', other_projects: other_projects
+
+:javascript
+  new Carousel()

@@ -1,0 +1,6 @@
+.other-projects.less-space-bottom
+  %hr
+  %h3.small.poppins.upcase Other Projects
+  .second-row.desktop-gimme-space.flex.col-row.btw
+    - other_projects.each do |item|
+      = render 'layouts/grid_item', item: item, size: 'third-w-space', fill: true

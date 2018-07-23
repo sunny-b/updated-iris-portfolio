@@ -1,0 +1,8 @@
+.flex.col.around.half-w-space
+  .section.full-width
+    = render 'layouts/grid_item', item: item, size: 'fill', fill: true
+  .section
+    %h2.zero.gimme-space.poppins.mid= "#{item[:product_name]} / $#{item[:price]}"
+    %p.reading= item[:product_description]
+    %p.zero.gimme-space.poppins.upcase.small.bold
+      %a{ href: item[:url] } Buy Poster

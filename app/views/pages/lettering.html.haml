@@ -1,2 +1,20 @@
-.flex.j-center
-  %h1.a-center.display Lettering Page Coming Soon!
+= render 'layouts/portfolio_page',
+    page: 'type & lettering',
+    carousel_images: ['https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering-1.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering/lettering%202.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering/lettering%203.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%204.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%205.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%206.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%207.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/kustomer_iphone_chat.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%208.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%209.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%2010.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering%2011.png', 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering/lettering%2012.png'],
+    secondary_image: '',
+    top_paragraphs: ['Various typographical and lettering experiments I’ve done through out the years. “Thanks for Everything” was recognized as Communication Arts 2015 Typographic Annual winner.'],
+    bottom_paragraphs: [],
+    after: {name: 'Illustrations', link: illustrations_path, image: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illo-1.png'},
+    prev: {name: 'Personal Work', link: personal_path, image: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/personal-1.png'},
+    other_projects: [{ name: 'Pathgather',
+       description: 'Lorem Ipsum',
+       img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/macbook-discover-homepage.gif',
+       path: pathgather_path },
+     { name: 'Kustomer',
+       description: 'Lorem Ipsum',
+       img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/kustomer-iphone-1.gif',
+       path: kustomer_path },
+     { name: 'Rope Type Foundry',
+        description: 'Lorem Ipsum',
+        img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/rope-1.png',
+        path: rope_path }]

@@ -21,7 +21,7 @@ class Carousel {
 
   prevImg(e) {
     const currentImg = document.querySelector('.carousel-item.active');
-    
+
     if (this.isNavShowing()) {
       this.hideNav();
     } else if (currentImg.previousElementSibling) {
@@ -42,7 +42,3 @@ class Carousel {
     document.querySelector('.carousel-nav.show').classList.remove('show');
   }
 }
-
-window.onload = function(e) {
-  new Carousel();
-};
