@@ -36,14 +36,12 @@ class PagesController < ApplicationController
 
     @first_row_items = [
       {
-        name: 'Kustomer',
-        description: 'Kustomer is an innovative B2B, SaaS, CRM platform. While I was here I acted as a product manager, UX designer and UI designer.',
+        description: 'Kustomer',
         img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/kustomer-iphone-1.gif',
         path: kustomer_path
       },
       {
-        name: 'Rope Type Foundry',
-        description: 'Lorem Ipsum',
+        description: 'Rope Type Foundry',
         img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/rope-1.png',
         path: rope_path
       }
@@ -51,20 +49,17 @@ class PagesController < ApplicationController
 
     @second_row_items = [
       {
-        name: 'Personal Work',
-        description: 'Lorem Ipsum',
+        description: 'Personal Work',
         img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/personal-1.png',
         path: personal_path
       },
       {
-        name: 'Type & Lettering',
-        description: 'Lorem Ipsum',
+        description: 'Type & Lettering',
         img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/lettering-1.png',
         path: lettering_path
       },
       {
-        name: 'Illustrations',
-        description: 'Lorem Ipsum',
+        description: 'Illustrations',
         img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/illo-1.png',
         path: illustrations_path
       },

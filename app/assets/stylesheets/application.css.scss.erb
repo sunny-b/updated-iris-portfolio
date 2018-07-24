@@ -36,11 +36,14 @@
 
 @font-face {
   font-family: "Super Bold";
-  src: url("<%= font_path('GT-Super-Display-Bold.woff') %>") format('woff'),
-       url("<%= font_path('GT-Super-Display-Bold.woff2') %>") format('woff2');
+  src: url("<%= font_path('GT-Super-Display-Bold-Italic.woff') %>") format('woff'),
+       url("<%= font_path('GT-Super-Display-Bold-Italic.woff2') %>") format('woff2');
 }
 
-
+* {
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+}
 
 /* Animations */
 
@@ -142,7 +145,7 @@
 .two-thirds { width: 66%; }
 
 .line-space { line-height: 20px; }
-.line-48 { line-height: 48px; }
+.line-44 { line-height: 44px; }
 
 .grow { flex-grow: 1 }
 .grow-2 { flex-grow: 2 }
@@ -216,11 +219,10 @@ aside {
 .desktop { display: block; }
 .block { display: block; }
 .max-550 { max-width: 550px; }
+.max-400 { max-width: 400px; }
 
 p {
   margin: 5px 0;
-  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
-  -moz-osx-font-smoothing: grayscale; /* Firefox */
 }
 
 a {
@@ -444,6 +446,14 @@ a:hover .lite-shadow.hover::after {
     width: 100%;
   }
 
+  .store-item .grid-item {
+    right: 24px;
+  }
+
+  .section > .store-item {
+    margin-bottom: 24px;
+  }
+
   .current .grid-item { margin-bottom: 16px; }
 
   .text-column { width: 70%; }
@@ -459,7 +469,6 @@ a:hover .lite-shadow.hover::after {
   }
 
   .mobile-gimme-less-space,
-  .gimme-space-bottom,
   .gimme-space {
     margin-top: 16px;
   }
@@ -477,7 +486,7 @@ a:hover .lite-shadow.hover::after {
     font-size: 28px;
   }
 
-  .line-48 {
+  .line-44 {
     line-height: 32px;
   }
 
@@ -573,19 +582,22 @@ a:hover .lite-shadow.hover::after {
     flex-direction: column-reverse;
   }
 
-  .line-48 {
+  .line-44 {
     line-height: 32px;
   }
 
   .grid-item {
     margin-bottom: 8px;
     position: relative;
-    right: 24px;
     width: 100vw;
   }
 
   .round-corners {
     border-radius: 0;
+  }
+
+  .carousel-nav .round-corners {
+    border-radius: 8px;
   }
 
   .current .grid-item { margin-bottom: 0; }
@@ -603,7 +615,6 @@ a:hover .lite-shadow.hover::after {
   }
 
   .mobile-gimme-less-space,
-  .gimme-space-bottom,
   .gimme-space {
     margin-top: 16px;
   }
