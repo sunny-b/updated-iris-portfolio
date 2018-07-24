@@ -642,8 +642,15 @@ a:hover .lite-shadow.hover::after {
 
 @media(pointer: coarse) {
   .hover-container:hover .borders:before,
-  .hover-container:hover .borders:after {
+  .hover-container:hover .borders:after,
+  .active .borders:before,
+  .active .borders:after {
     display: none;
+  }
+
+  .active .borders
+  .active .borders {
+    text-decoration: underline;
   }
 
   .lite-shadow.hover::after {
@@ -653,4 +660,6 @@ a:hover .lite-shadow.hover::after {
   a:hover .lite-shadow.hover::after {
     display: none;
   }
+
+  .grid-item:hover .hover-box { display: none; }
 }
