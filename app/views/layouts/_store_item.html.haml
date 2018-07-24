@@ -5,4 +5,4 @@
     %h2.zero.gimme-space.poppins.mid= "#{item[:product_name]} / $#{item[:price]}"
     %p.reading= item[:product_description]
     %p.zero.gimme-space.poppins.upcase.small.bold
-      %a{ href: item[:url] } Buy Poster
+      %a{ href: item[:path], target: "_blank" } Buy Poster
