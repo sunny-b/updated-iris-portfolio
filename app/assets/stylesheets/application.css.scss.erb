@@ -366,7 +366,6 @@ nav {
   cursor: url("<%= image_path('tilted-hand.svg') %>"), auto;
 }
 
-.lite-shadow.hover::after,
 .lite-shadow.hover::after {
   position: absolute;
   top: 0;
@@ -381,12 +380,10 @@ nav {
   z-index: 19;
 }
 
-a:hover .lite-shadow.hover::after,
 a:hover .lite-shadow.hover::after {
   opacity: 1;
 }
 
-.lite-shadow.hover,
 .lite-shadow.hover {
   height: 22vw;
   max-height: 223px;
@@ -641,4 +638,13 @@ a:hover .lite-shadow.hover::after {
   .carousel-nav {
     padding: 8px 16px 32px;
   }
+}
+
+@media(pointer: coarse) {
+  .hover-container:hover .borders:before,
+  .hover-container:hover .borders:after {}
+
+  .lite-shadow.hover::after {}
+
+  a:hover .lite-shadow.hover::after {}
 }
