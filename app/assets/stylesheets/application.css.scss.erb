@@ -642,9 +642,15 @@ a:hover .lite-shadow.hover::after {
 
 @media(pointer: coarse) {
   .hover-container:hover .borders:before,
-  .hover-container:hover .borders:after {}
+  .hover-container:hover .borders:after {
+    display: none;
+  }
 
-  .lite-shadow.hover::after {}
+  .lite-shadow.hover::after {
+    display: none;
+  }
 
-  a:hover .lite-shadow.hover::after {}
+  a:hover .lite-shadow.hover::after {
+    display: none;
+  }
 }
