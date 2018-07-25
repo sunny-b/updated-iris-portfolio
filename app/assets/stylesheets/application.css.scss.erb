@@ -138,6 +138,7 @@
 }
 
 .half-w-space { width: 49%; }
+.half-w-space-no-full { width: 49%; }
 .half-w-more-space { width: 44%; }
 .third-w-space { width: 32%; }
 .half { width: 50%; }
@@ -280,7 +281,6 @@ nav {
 
 .intro,
 .writing { max-width: 795px; }
-.store-item { max-width: 500px; }
 
 /* Hover Box */
 
@@ -349,7 +349,8 @@ nav {
 
 .carousel-nav {
   position: absolute;
-  height: 77%;
+  height: 70%;
+  min-height: 140px;
   width: 100%;
   bottom: -100%;
   left: 0;
@@ -385,11 +386,9 @@ a:hover .lite-shadow.hover::after {
 }
 
 .lite-shadow.hover {
-  height: 22vw;
-  max-height: 223px;
+  height: 19vw;
   position: relative;
 }
-
 
 /* Responsiveness */
 
@@ -398,9 +397,18 @@ a:hover .lite-shadow.hover::after {
   width: 100%;
 }
 
+.bear-pic {
+  width: 36%;
+}
+
 @media(max-width: 1000px) {
   body {
     padding: 24px 48px 8px;
+  }
+
+  .bear-pic {
+    width: 100%;
+    max-width: 450px;
   }
 
   .col-row {
@@ -444,10 +452,6 @@ a:hover .lite-shadow.hover::after {
     width: 100%;
   }
 
-  .store-item .grid-item {
-    right: 24px;
-  }
-
   .section > .store-item {
     margin-bottom: 24px;
   }
@@ -461,6 +465,8 @@ a:hover .lite-shadow.hover::after {
     width: 100%;
   }
 
+  .half-w-space-no-full { width: 100%; }
+
   .desktop-gimme-space,
   .desktop-gimme-less-space {
     margin-top: 0;
@@ -472,7 +478,7 @@ a:hover .lite-shadow.hover::after {
   }
 
   .carousel-nav {
-    padding: 2% 7% 7%;
+    padding: 7% 7% 7%;
   }
 
   .mid {
@@ -506,6 +512,10 @@ a:hover .lite-shadow.hover::after {
     flex-direction: column;
   }
 
+  .store-item .grid-item {
+    right: 24px;
+  }
+
   .big {
     font-size: 24px;
   }
@@ -516,6 +526,10 @@ a:hover .lite-shadow.hover::after {
 
   .shift {
     transform: none;
+  }
+
+  .lite-shadow.hover {
+    height: 22vw;
   }
 
   nav {
@@ -636,7 +650,7 @@ a:hover .lite-shadow.hover::after {
 
 @media(max-width: 400px) {
   .carousel-nav {
-    padding: 8px 16px 32px;
+    padding: 16px 16px 12px;
   }
 }
 

@@ -15,16 +15,16 @@
       .carousel-control-prev.half
       .carousel-control-next.half
       .carousel-nav.flex.row.btw.box-shadow-top.round-corners
-        .carousel-nav-prev.half-w-more-space
-          %a.flex.col.j-center.btw.fill{href: prev[:link]}
+        .carousel-nav-prev.half-w-more-space.a-center
+          %a.flex.col.j-center.fill{href: prev[:link]}
             .lite-shadow.hover.round-corners
-              = image_tag prev[:image], class: 'fill round-corners'
+              = image_tag prev[:image], class: 'fill round-corners block'
             %span.small.poppins.upcase.black-font.gimme-less-space Previous
             %h3.zero.mid.bold.black-font= prev[:name]
-        .carousel-nav-next.half-w-more-space
-          %a.flex.col.j-center.btw.fill{href: after[:link]}
+        .carousel-nav-next.half-w-more-space.a-center
+          %a.flex.col.j-center.fill{href: after[:link]}
             .lite-shadow.hover.round-corners
-              = image_tag after[:image], class: 'fill round-corners'
+              = image_tag after[:image], class: 'fill round-corners block'
             %span.small.poppins.upcase.black-font.gimme-less-space Next
             %h3.zero.mid.bold.black-font= after[:name]
   .section.less-space-bottom.text-column
