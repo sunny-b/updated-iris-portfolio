@@ -158,10 +158,11 @@
  /* Application */
 
 body {
+  max-width: 2100px;
   min-height: 100vh;
   background: linear-gradient(#5241FF, #7B44FF) no-repeat;
   padding: 24px 80px 8px;
-  margin: 0;
+  margin: 0 auto;
   font-size: 16px;
   color: #F0F0F0;
   box-sizing: border-box;
@@ -386,7 +387,7 @@ a:hover .lite-shadow.hover::after {
 }
 
 .lite-shadow.hover {
-  height: 19vw;
+  height: 17vw;
   position: relative;
 }
 
@@ -399,6 +400,63 @@ a:hover .lite-shadow.hover::after {
 
 .bear-pic {
   width: 36%;
+}
+
+.contact-links {
+  width: 150px;
+}
+
+.tool-tip {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide the tooltip content by default */
+.tool-tip:before,
+.tool-tip:after {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+.tool-tip:before {
+  position: absolute;
+  top: 33px;
+  left: -22px;
+  padding: 8px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: #222222;
+  color: #fff;
+  content: attr(data-tooltip);
+  font-family: "National Book", "Poppins", Helvetica, sans-serif;
+  text-align: center;
+  font-size: 15px;
+  line-height: 2;
+  box-shadow: 0 2px 15px 0 rgba(0,0,0,0.5);
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+.tool-tip:after {
+  position: absolute;
+  top: 28px;
+  left: 55%;
+  margin-left: -5px;
+  width: 0;
+  border-bottom: 5px solid #222222;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+.tool-tip:hover:before,
+.tool-tip:hover:after {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media(max-width: 1000px) {
@@ -665,6 +723,13 @@ a:hover .lite-shadow.hover::after {
   .active .borders
   .active .borders {
     text-decoration: underline;
+  }
+
+  .tool-tip:before,
+  .tool-tip:after,
+  .tool-tip:hover:after,
+  .tool-tip:hover:before {
+    display: none;
   }
 
   .lite-shadow.hover::after {

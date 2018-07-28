@@ -2,6 +2,17 @@
   .section
     %h3.small.poppins.upcase Drop A Line
   .section.col-row.flex.btw.fill
-    %p.big.display.a-start.half-w-space-no-full.less-space-bottom Let's work together. Email me for general inquires or just to <a class="bold underline link-hover" href="mailto:irissprague@gmail.com">say hello.</a>
+    .flex.col.a-start.half-w-space-no-full.less-space-bottom
+      %p.big.display.gimme-space-bottom Let's work together. Email me for general inquires or just to <a class="bold underline link-hover" href="mailto:irissprague@gmail.com">say hello.</a>
+      .flex.row.contact-links.btw
+        .social-link.tool-tip{ data: { tooltip: 'LinkedIn' } }
+          %a{ href: 'https://www.linkedin.com/in/iris-sprague-74426a36/' }
+            %img{ src: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/social-links/linkedin.svg' }
+        .social-link.tool-tip{ data: { tooltip: 'Instagram' } }
+          %a{ href: 'https://www.instagram.com/irissprague/' }
+            %img{ src: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/social-links/instagram.svg' }
+        .social-link.tool-tip{ data: { tooltip: 'Dribbble' } }
+          %a{ href: 'https://dribbble.com/irissprague1' }
+            %img{ src: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/social-links/dribbble.svg' }
     %figure.zero.less-space-bottom.bear-pic.a-center.fill
       = image_tag 'https://media.giphy.com/media/IThjAlJnD9WNO/giphy.gif', class: 'fill round-corners box-shadow'
