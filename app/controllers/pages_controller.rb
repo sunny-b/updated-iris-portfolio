@@ -19,7 +19,7 @@ class PagesController < ApplicationController
       {
         product_name: 'The Unseen Alphabet',
         price: '30.00',
-        product_description: '18x24 Screen printed poster using glyphs not normally seen in latin alphabets set in a latin alphabet. Printed at Broken Press in Seattle.',
+        product_description: '18x24 Screen printed poster using glyphs not normally seen in latin alphabets. Printed at Broken Press in Seattle.',
         img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/store/store%202.png',
         path: 'https://www.etsy.com/listing/616650526/the-unseen-alphabet?ref=shop_home_active_1',
         description: 'Buy on Etsy',
