@@ -5,7 +5,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get install yarn
 
-CMD ["/sbin/my_init"]
+# CMD ["/sbin/my_init"]
 
 RUN rm -f /etc/service/nginx/down
 RUN rm /etc/nginx/sites-enabled/default
@@ -15,9 +15,17 @@ ADD nginx/rails-env.conf /etc/nginx/main.d/rails-env.conf
 ADD nginx/app-env.conf /etc/nginx/conf.d/00_app_env.conf
 
 WORKDIR /home/app/iris-site
+
+ADD Gemfile* ./
+
+ENV BUNDLE_GEMFILE=/home/app/iris-site/Gemfile \
+  BUNDLE_JOBS=2 \
+  BUNDLE_PATH=/box
+
+RUN bundle check || bundle install --without development test
+
 COPY . .
 RUN chown -R app:app /home/app
-RUN bundle check || bundle install --without development test
 
 ENV RAILS_ENV production
 ENV RACK_ENV production
