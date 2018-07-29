@@ -17,7 +17,7 @@ ADD nginx/app-env.conf /etc/nginx/conf.d/00_app_env.conf
 WORKDIR /home/app/iris-site
 COPY . .
 RUN chown -R app:app /home/app
-RUN bundle install --without development test
+RUN bundle check || bundle install --without development test
 
 ENV RAILS_ENV production
 ENV RACK_ENV production
