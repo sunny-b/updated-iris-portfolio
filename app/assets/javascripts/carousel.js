@@ -1,5 +1,6 @@
 class Carousel {
   constructor() {
+    this.hidePrevFinger();
     this.bindEvents();
   }
 
@@ -9,6 +10,7 @@ class Carousel {
   }
 
   nextImg(e) {
+    this.showPrevFinger();
     const currentImg = document.querySelector('.carousel-item.active');
 
     if (currentImg.nextElementSibling) {
@@ -16,10 +18,12 @@ class Carousel {
       currentImg.nextElementSibling.classList.add('active');
     } else if (!this.isNavShowing()) {
       this.displayNav();
+      this.hideNextFinger();
     }
   }
 
   prevImg(e) {
+    this.showNextFinger();
     const currentImg = document.querySelector('.carousel-item.active');
 
     if (this.isNavShowing()) {
@@ -27,6 +31,7 @@ class Carousel {
     } else if (currentImg.previousElementSibling) {
       currentImg.classList.remove('active');
       currentImg.previousElementSibling.classList.add('active');
+      this.hidePrevFinger();
     }
   }
 
@@ -40,5 +45,21 @@ class Carousel {
 
   hideNav() {
     document.querySelector('.carousel-nav.show').classList.remove('show');
+  }
+
+  hideNextFinger() {
+    document.querySelector('.carousel-control-next').classList.add('not-active')
+  }
+
+  hidePrevFinger() {
+    document.querySelector('.carousel-control-prev').classList.add('not-active')
+  }
+
+  showNextFinger() {
+    document.querySelector('.carousel-control-next').classList.remove('not-active')
+  }
+
+  showPrevFinger() {
+    document.querySelector('.carousel-control-prev').classList.remove('not-active')
   }
 }

@@ -337,12 +337,17 @@ nav {
   z-index: 10;
 }
 
-.carousel-control-next:hover {
+.carousel-control-next:hover, {
   cursor: url("<%= image_path('side-hand.svg') %>"), auto;
 }
 
 .carousel-control-prev:hover {
   cursor: url("<%= image_path('hand-left.svg') %>"), auto;
+}
+
+.carousel-control-next.not-active:hover,
+.carousel-control-prev.not-active:hover {
+  cursor: default;
 }
 
 .carousel-control-next { right: 0; }
