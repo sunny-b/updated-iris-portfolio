@@ -11,4 +11,4 @@ git add .
 git commit -m "$GIT_MESSAGE"
 git push origin master
 
-dupd
+docker-compose up -d --build

@@ -25,18 +25,24 @@ class Carousel {
   prevImg(e) {
     this.showNextFinger();
     const currentImg = document.querySelector('.carousel-item.active');
+    const prevImg = currentImg.previousElementSibling;
 
     if (this.isNavShowing()) {
       this.hideNav();
-    } else if (currentImg.previousElementSibling) {
+    } else if (prevImg) {
+      if (this.isFirstImage(prevImg)) this.hidePrevFinger();
+
       currentImg.classList.remove('active');
       currentImg.previousElementSibling.classList.add('active');
-      this.hidePrevFinger();
     }
   }
 
   isNavShowing() {
     return !!document.querySelector('.carousel-nav.show');
+  }
+
+  isFirstImage(img) {
+    return img.previousElementSibling == null
   }
 
   displayNav() {
