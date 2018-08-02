@@ -9,6 +9,6 @@ fi
 
 git add .
 git commit -m "$GIT_MESSAGE"
-git push origin master
+git push -f origin master
 
 docker-compose up -d --build
