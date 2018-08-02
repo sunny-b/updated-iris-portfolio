@@ -137,7 +137,7 @@
   margin: 0;
 }
 
-.half-w-space { width: 49%; }
+.half-w-space,
 .half-w-space-no-full { width: 49%; }
 .half-w-more-space { width: 44%; }
 .third-w-space { width: 32%; }
@@ -217,7 +217,7 @@ aside {
   width: 100%;
 }
 .round-corners { border-radius: 8px; }
-.mobile { display: none; }
+.mobile, .mobile-only { display: none; }
 .desktop { display: block; }
 .block { display: block; }
 .max-550 { max-width: 550px; }
@@ -709,6 +709,16 @@ a:hover .lite-shadow.hover::after {
     position: relative;
     right: 24px;
     width: 100vw;
+  }
+}
+
+@media(max-width: 500px) {
+  .non-mobile {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
   }
 }
 

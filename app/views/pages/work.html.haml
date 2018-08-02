@@ -2,15 +2,18 @@
   .section.less-space-bottom.current
     %h3.small.poppins.upcase What I&rsquo;m Doing
     .flex.col-row.btw.mobile-col-rev
-      .gimme-height.btw.mobile-gimme-less-space.full-width
+      .gimme-height.btw.mobile-gimme-less-space.half-w-space-no-full
         %p.display.big.line-44 Pathgather is a learning platform for enterprise companies. I redesigned their entire platform, end-to-end.
-        .zero-children.gimme-space
+        .gimme-space
           %p.poppins.small.upcase Roles:
-          %p.poppins.small.upcase Product Manager, UX Designer, UX Researcher,
-          %p.poppins.small.upcase UI Designer, and Brand Designer.
+          .non-mobile
+            %p.poppins.small.upcase.zero Product Manager, UX Designer, UX Researcher,
+            %p.poppins.small.upcase.zero UI Designer, and Brand Designer.
+          .mobile-only
+            %p.poppins.small.upcase.zero Product Manager, UX Designer, UX Researcher, UI Designer, and Brand Designer.
         %p.gimme-space
           = link_to 'See Pathgather Work', pathgather_path, class: 'bold underline link-hover'
-      = render 'layouts/grid_item', item: @current_item, size: 'fill a-center-mobile', fill: false
+      = render 'layouts/grid_item', item: @current_item, size: 'half-w-space a-center-mobile', fill: false
   .section.less-space-bottom
     %h3.small.poppins.upcase What I&rsquo;ve Done
     .first-row.flex.col-row.btw.gimme-space
