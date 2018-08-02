@@ -1,0 +1,25 @@
+#!/bin/bash
+
+while getopts ":m" opt; do
+  case ${opt} in
+    m)
+      GIT_MESSAGE = $OPTARG
+      ;;
+    *)
+      echo "Usage: cmd -m message"
+      return
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+if [ -z $GIT_MESSAGE ]
+    echo "Usage: cmd -m message"
+    return
+fi
+
+git add .
+git commit -m "$GIT_MESSAGE"
+git push origin master
+
+docker-compose up -d --build
