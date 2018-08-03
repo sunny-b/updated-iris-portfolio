@@ -13,7 +13,8 @@
             %p.poppins.small.upcase.zero Product Manager, UX Designer, UX Researcher, UI Designer, and Brand Designer.
         %p.gimme-space
           = link_to 'See Pathgather Work', pathgather_path, class: 'bold underline link-hover'
-      = render 'layouts/grid_item', item: @current_item, size: 'half-w-space a-center-mobile', fill: false
+      .section.half-w-space.full-size-mobile
+        = render 'layouts/grid_item', item: @current_item, size: 'a-center-mobile', fill: false
   .section.less-space-bottom
     %h3.small.poppins.upcase What I&rsquo;ve Done
     .first-row.flex.col-row.btw.gimme-space

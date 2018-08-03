@@ -31,7 +31,7 @@ class PagesController < ApplicationController
   def work
     @page = 'work'
     @current_item = {
-      description: 'See Pathgather Work',
+      description: 'Pathgather',
       img: 'https://iris-site.nyc3.cdn.digitaloceanspaces.com/newpgcover1.png',
       path: pathgather_path
     }
