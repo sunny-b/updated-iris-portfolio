@@ -29,6 +29,12 @@
 }
 
 @font-face {
+  font-family: "National Italic";
+  src: url("<%= font_path('NationalWeb-BookItalic.woff') %>") format('woff'),
+       url("<%= font_path('NationalWeb-BookItalic.woff2') %>") format('woff2');
+}
+
+@font-face {
   font-family: "Super Display";
   src: url("<%= font_path('GT-Super-Display-Regular.woff') %>") format('woff'),
        url("<%= font_path('GT-Super-Display-Regular.woff2') %>") format('woff2');
@@ -175,6 +181,7 @@ aside {
 }
 
 .reading { font-family: "National Book", "Poppins", Helvetica, sans-serif; }
+.italic { font-family: "National Italic", "Poppins", Helvetica, sans-serif; }
 .display { font-family: "Super Display", "Poppins", Helvetica, sans-serif; }
 .bold { font-family: "Super Bold", "Poppins", Helvetica, sans-serif; }
 .poppins { font-family: "National Medium", Helvetica, sans-serif; }
