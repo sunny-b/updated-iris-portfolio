@@ -1,0 +1,5 @@
+#!/bin/bash
+
+bundle check || bundle install --without test development
+
+bundle exec rake assets:precompile

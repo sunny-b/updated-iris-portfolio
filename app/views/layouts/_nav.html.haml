@@ -3,6 +3,6 @@
     .hover-container{ class: ('active' if page.downcase == 'home') }
       = link_to "Iris Sprague", root_path, class: 'borders'
   .nav-links.flex.row.btw.grow.max-550
-    - %w(Work About Store Contact).each do |title|
+    - %w(Work About Contact).each do |title|
       .hover-container{ class: ('active' if page.downcase == title.downcase) }
         = link_to title, { controller: 'pages', action: title.downcase }, class: 'borders'
